@@ -13,9 +13,11 @@ const Hero = () => {
         Building creative and functional web solutions with a focus on design{" "}
         <br /> and user experience.
       </p>
-      <button className="about-me overflow-hidden btn relative border-2 border-[#d10580] p-2 px-3 font-semibold flex items-center gap-5 m-5">
-        About me
-      </button>
+      <div className="about-me-parent relative flex items-center w-auto">
+        <button className="about-me overflow-hidden btn relative border-2 border-[#d10580] p-2 px-4 font-semibold flex items-center gap-5 m-5">
+          About me
+        </button>
+      </div>
     </section>
   );
 };

@@ -31,16 +31,20 @@ h2,
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  transition: all 1s ease;
-}
-.about-me::after {
-  content: "→";
-  display: inline-block;
-  position: absolute;
-  top: 2%;
-  left: 90%;
-  z-index: 10;
+  transition: all 0.5s ease;
 }
 .about-me:hover::before {
   margin-left: 0px;
+}
+.about-me-parent::after {
+  content: "→";
+  display: inline-block;
+  font-size: 2em;
+  position: absolute;
+  left: 19%;
+  top: 19%;
+  transition: all 0.5s ease;
+}
+.about-me-parent:hover::after {
+  margin-left: 8px;
 }
