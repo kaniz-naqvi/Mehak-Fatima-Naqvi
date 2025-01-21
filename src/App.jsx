@@ -1,10 +1,12 @@
 import React from "react";
+import Hero from "./components/Section1/Hero";
+import Nav from "./components/Section1/Nav";
 
 const App = () => {
   return (
     <>
-      <h1>Hello world!</h1>
-      <button class="btn btn-primary">Click Me</button>
+      <Nav />
+      <Hero />
     </>
   );
 };

@@ -1,3 +1,46 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+* {
+  font-family: "Arial";
+}
+h1,
+h2,
+.heading {
+  font-family: "Cinzel Decorative";
+}
+.text-primary {
+  color: #d10580;
+}
+.bg-primary {
+  background-color: #d10580;
+}
+.active-link {
+  border-bottom: #d10580 2px solid;
+  color: #d10580;
+  transition: all ease 0.2s;
+}
+.about-me::before {
+  content: "";
+  width: 200%;
+  height: 200%;
+  background-color: #d10580;
+  position: absolute;
+  z-index: -1;
+  margin-left: -300%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 1s ease;
+}
+.about-me::after {
+  content: "→";
+  display: inline-block;
+  position: absolute;
+  top: 2%;
+  left: 90%;
+  z-index: 10;
+}
+.about-me:hover::before {
+  margin-left: 0px;
+}

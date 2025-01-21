@@ -6,8 +6,5 @@ export default {
   theme: {
     extend: {},
   },
-  plugins: [require("daisyui")],
-  daisyui: {
-    themes: ["light"], // Default theme ko light mode set karo
-  },
+  plugins: [],
 };
