@@ -1,0 +1,47 @@
+.about-me::before {
+  content: "";
+  width: 200%;
+  height: 200%;
+  background-color: #d10580;
+  position: absolute;
+  z-index: -1;
+  margin-left: -300%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 1s ease;
+}
+.about-me:hover::before {
+  margin-left: 0px;
+}
+.about-me-parent::after {
+  content: "→";
+  display: inline-block;
+  font-size: 2.5em;
+  position: absolute;
+  left: 65%;
+  top: 7%;
+  transition: all 1s ease;
+}
+.about-me-parent:hover::after {
+  margin-left: 0.5rem;
+}
+#image-section {
+  background-image: url("hero.png");
+}
+#hero::after {
+  content: "";
+  display: inline-block;
+  background-image: url("hero.png");
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-position: center;
+  background-size: cover;
+  z-index: -5;
+}
+@media (max-width: 400px) {
+  #hero::after {
+    background-image: none;
+  }
+}
