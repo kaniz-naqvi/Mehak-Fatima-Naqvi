@@ -1,25 +1,12 @@
 import React from "react";
 import "./hero.css";
-import { GitHub, Instagram, LinkedIn, Pixabay } from "../Icons";
+
+import Sidebar from "./Sidebar";
+import Overlay from "./Overlay";
 const Hero = () => {
   return (
     <section id="hero" className="flex h-full">
-      {/* Sidebar */}
-      <div className="flex flex-col mx-2 lg:ms-8  w-14 lg:mr-16 z-20 gap-3 lg:gap-6 sticky">
-        <div className="bg-primary h-36 ms-6 w-[3px]"></div>
-        <a href="#" className="bg-primary text-white rounded-full py-2 px-3">
-          <GitHub />
-        </a>
-        <a href="#" className="bg-primary text-white rounded-full py-2 px-3">
-          <Instagram />
-        </a>
-        <a href="#" className="bg-primary text-white rounded-full py-2 px-3">
-          <Pixabay />
-        </a>
-        <a href="#" className="bg-primary text-white rounded-full py-2 px-3">
-          <LinkedIn />
-        </a>
-      </div>
+      <Sidebar />
       <div className="w-full">
         <h1 className="heading text-primary mt-40 lg:font-medium font-semibold lg:text-7xl text-4xl lg:mt-44">
           <span className="heading active-link">Fr</span>ontEnd
@@ -37,6 +24,7 @@ const Hero = () => {
           </button>
         </div>
       </div>
+      <Overlay />
     </section>
   );
 };

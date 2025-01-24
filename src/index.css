@@ -9,12 +9,6 @@ h2,
 .heading {
   font-family: "Cinzel Decorative";
 }
-.text-primary {
-  color: #d10580;
-}
-.bg-primary {
-  background-color: #d10580;
-}
 .active-link {
   border-bottom: #d10580 2px solid;
   color: #d10580;
