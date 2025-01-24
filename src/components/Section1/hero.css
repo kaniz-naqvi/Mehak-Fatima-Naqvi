@@ -45,4 +45,13 @@
   #hero::after {
     background-image: none;
   }
+  /* Background container */
+  .bg-container {
+    background-image: url("/your-background-image.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* full height */
+    width: 100%;
+  }
 }
