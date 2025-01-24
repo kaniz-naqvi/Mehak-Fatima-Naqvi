@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import "./hero.css";
-
 import Sidebar from "./Sidebar";
-import Overlay from "./Overlay";
+import Overlay from "./Overlay/Overlay";
+
 const Hero = () => {
+  // State to control overlay visibility
+  const [overlayVisible, setOverlayVisible] = useState(false);
+
   return (
     <section id="hero" className="flex h-full">
       <Sidebar />
@@ -19,12 +22,21 @@ const Hero = () => {
           and user experience.
         </p>
         <div className="about-me-parent relative flex items-center px-2 h-20 w-40">
-          <button className="about-me overflow-hidden btn relative border-2 border-[#d10580] p-1 px-4 font-semibold flex items-center gap-5 lg:my-5">
+          <button
+            className="about-me overflow-hidden btn relative border-2 border-[#d10580] p-1 px-4 font-semibold flex items-center gap-5 lg:my-5"
+            onClick={() => setOverlayVisible(true)} // Toggle overlay visibility
+          >
             About me
           </button>
         </div>
       </div>
-      <Overlay />
+
+      {overlayVisible && (
+        <Overlay
+          overlayVisible={overlayVisible}
+          setOverlayVisible={setOverlayVisible}
+        />
+      )}
     </section>
   );
 };
