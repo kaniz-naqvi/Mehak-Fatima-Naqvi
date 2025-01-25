@@ -21,13 +21,13 @@ const workDetails = [
   {
     position: "FrontEnd Developer",
     company: "CodeAlpha",
-    yearOfWork: "Oct - Nov (2024)",
+    yearOfWork: "Oct-Nov, 2024",
     jobType: "Intern",
   },
   {
     position: "React Developer",
     company: "Cloud Ignite",
-    yearOfWork: "2024",
+    yearOfWork: "Jan-Feb, 2025",
     jobType: "Contract",
   },
 ];
@@ -49,14 +49,14 @@ const Overlay = ({ overlayVisible, setOverlayVisible }) => {
             {/* Purple Background div */}
             <div className="lg:bg-[#d1057fcb] px-0 py-0 min-h-full bg-primary lg:rounded-3xl md:rounded-3xl relative w-full overflow-x-hidden overflow-y-auto flex flex-col">
               <Borders setOverlayVisible={setOverlayVisible} />
-              <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 w-full h-full gap-8 flex-1 overflow-y-auto overflow-x-hidden">
+              <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 w-full h-full lg:gap-8 flex-1 overflow-y-auto overflow-x-hidden">
                 {/* Left Column */}
-                <div className="w-full ms-10 lg:px-5 p-2">
+                <div className="w-full lg:ms-10 lg:px-5 p-4">
                   <AboutMe />
                 </div>
 
                 {/* Right Column */}
-                <div className="w-full py-10 px-10 lg:px-5 relative lg:border-l-[1px] border-light h-[90%] mt-8">
+                <div className="w-full lg:py-10 ps-4 lg:px-5 relative lg:border-l-[1px] border-light h-[90%] lg:mt-8">
                   <div className="lg:bg-[url('border-half.png')] lg:w-[40%] lg:block hidden h-[60%] w-[70%] right-0 absolute bottom-[-3%] scale-y-[-1] scale-x-[-1] bg-contain bg-no-repeat bg-top p-10"></div>
                   <Education educationDetails={educationDetails} />
                   <Experience workDetails={workDetails} />

@@ -4,7 +4,7 @@ import AboutCard from "./AboutCard";
 const Education = ({ educationDetails }) => {
   return (
     <div>
-      <h2 className="heading text-3xl mt-5 mb-2 md:mt-0 font-semibold">
+      <h2 className="heading text-3xl lg:mt-5 mb-2 md:mt-0 font-semibold">
         Education
       </h2>
       {educationDetails.map((object, index) => (
