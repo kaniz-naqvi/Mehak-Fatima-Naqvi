@@ -35,7 +35,7 @@ const workDetails = [
 const Overlay = ({ overlayVisible, setOverlayVisible }) => {
   return (
     <div
-      className={`fixed h-full w-full top-0 left-0 bg-[#000000d5] z-50 lg:p-10 md:p-10 overflow-y-auto lg:overflow-y-hidden overflow-x-hidden transform ${
+      className={`fixed h-full w-full top-0 left-0 bg-[#000000d5] z-50 lg:p-16 md:p-10 overflow-y-auto lg:overflow-y-hidden overflow-x-hidden transform ${
         overlayVisible ? "translate-x-0" : "-translate-x-full"
       } transition-transform duration-1000 ease-in-out`} // Slide effect
     >

@@ -11,13 +11,13 @@ const Hero = () => {
     <section id="hero" className="flex h-full">
       <Sidebar />
       <div className="w-full">
-        <h1 className="heading text-primary mt-40 lg:font-medium font-semibold lg:text-7xl text-4xl lg:mt-44">
+        <h1 className="heading text-primary mt-40 lg:font-medium font-semibold md:text-5xl lg:text-7xl text-4xl lg:mt-44">
           <span className="heading active-link">Fr</span>ontEnd
         </h1>
-        <h1 className="heading ms-8 lg:ms-48 py-2 lg:font-medium font-semibold text-black lg:text-7xl text-[2.5rem]">
+        <h1 className="heading ms-8 lg:ms-48 py-2 lg:font-medium font-semibold md:text-5xl md:ms-16 text-black lg:text-7xl text-[2.5rem]">
           Developer
         </h1>
-        <p className="lg:py-7 lg:w-[40rem] px-2 lg:text-lg">
+        <p className="lg:py-7 lg:w-[40rem] md:w-[25rem] px-2 lg:text-lg">
           Building creative and functional web solutions with a focus on design
           and user experience.
         </p>
