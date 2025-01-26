@@ -11,7 +11,7 @@ const NavLinks = ({ activeItem, clickHandler }) => {
           <a
             href="#"
             className={`tracking-wide font-semibold ${
-              activeItem === index ? "active-link text-blue-500" : ""
+              activeItem === index ? "active-link text-primary" : ""
             }`}
           >
             {item}
@@ -39,7 +39,7 @@ const Nav = () => {
     <>
       <header className="w-full flex">
         {/* Navbar */}
-        <nav className="lg:px-12 ps-10 px-3 lg:ps-20 z-10 w-full h-20 flex items-center fixed bg-[#ffffffa9] justify-between">
+        <nav className="lg:px-12 ps-10 px-3 lg:ps-20 z-10 w-full h-20 flex items-center fixed bg-[#ffffff] justify-between">
           {/* Brand */}
           <a href="#" className="nav-brand flex items-center">
             <img src="M-logo.png" alt="Logo" className="h-14" />

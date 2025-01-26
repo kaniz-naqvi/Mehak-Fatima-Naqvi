@@ -8,7 +8,7 @@ const Hero = () => {
   const [overlayVisible, setOverlayVisible] = useState(false);
 
   return (
-    <section id="hero" className="flex h-full">
+    <section id="hero" className="flex h-full relative">
       <Sidebar />
       <div className="w-full">
         <h1 className="heading text-primary mt-40 lg:font-medium font-semibold md:text-5xl lg:text-7xl text-4xl lg:mt-44">
