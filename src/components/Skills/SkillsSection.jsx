@@ -1,85 +1,111 @@
 import React, { useState } from "react";
-import Sidebar from "./Sidebar";
-import "./skills.css";
-import { MUI } from "./SvgIcons";
+import Aside from "./Aside";
+import { GSAP, MUI, Canva, Figma } from "./SvgIcons"; // Import MUI SVG
 
-const icons = ["bi-code", "bi-tools", "bi-puzzle", "bi-gear-wide-connected"];
+// Sample icons array
+const icons = [
+  { icon: "bi-code", span: "Languages" },
+  { icon: "bi-gear-wide-connected", span: "Frameworks" },
+  { icon: "bi-tools", span: "Toolkit" },
+  { icon: "bi-puzzle", span: "Others" },
+];
+
+// Sample skills array with different categories
 const skills = [
   {
-    category: "Frameworks",
+    category: "Programming Languages",
+    skills: [
+      {
+        name: "JavaScript",
+        icon: "ri-javascript-fill",
+        color: "text-yellow-500",
+      },
+      { name: "Python", icon: "bi bi-python", color: "text-[#306998]" },
+    ],
+  },
+  {
+    category: "Frameworks & Libraries",
     skills: [
       {
         name: "React",
         icon: "ri ri-reactjs-fill",
         color: "text-[#53c1de]",
-        description: "A JavaScript library for building user interfaces.",
       },
       {
         name: "Bootstrap",
         icon: "bi-bootstrap-fill",
         color: "text-[#6F2CF4]",
-        description: "Components-based CSS framework.",
       },
       {
         name: "Tailwind",
         icon: "ri ri-tailwind-css-fill",
         color: "text-[#38BDF8]",
-        description: "Utility-first CSS framework.",
       },
       {
         name: "MUI",
-        svg: <MUI />,
+        svg: <MUI />, // SVG icon
         color: "text-[#007FFF]",
-        description: "Material UI React components library.",
       },
       {
         name: "GSAP",
-        icon: "bi bi-code-slash",
+        svg: <GSAP />,
         color: "text-[#6EC1E4]",
-        description: "JavaScript library for animations.",
       },
+    ],
+  },
+  // Add more categories and skills as needed
+  {
+    category: "Tools and ..",
+    skills: [
+      {
+        name: "Figma",
+        svg: <Figma />,
+        color: "text-[#bb00bb]",
+      },
+      { name: "Canva", svg: <Canva />, color: "text-[#306998]" },
     ],
   },
 ];
 
 const SkillsSection = () => {
-  const [active, setActive] = useState(0);
+  // State to track the active icon (category)
+  const [active, setActive] = useState(1); // Default active index for Frameworks & Libraries
 
-  // Get active category skills
-  const activeSkills = skills[active]?.skills || [];
+  // Get the active skills category
+  const activeSkills = skills[active];
 
   return (
-    <>
-      <div className="flex items-center mt-20 justify-between h-screen w-full">
-        <Sidebar active={active} setActive={setActive} icons={icons} />
-
-        <div className="cards w-[80%] items-center mt-10 mx-10 h-[90%] gap-5 border p-5 flex flex-col justify-center">
-          <h2 className="text-center pt-3 text-primary border-primary w-fit border-b-[1.7px] text-2xl">
-            Frameworks & Libraries
-          </h2>
-          <div className="flex items-center justify-center flex-wrap gap-12 pt-4 w-full h-[90%]">
-            {/* Render cards dynamically */}
-            {activeSkills.map((skill, i) => (
-              <div
-                key={i}
-                className="card w-[25%] shadow-shadow-dark bg h-[40%] rounded-2xl relative"
-              >
-                <div className="absolute flex flex-col items-center px-1 justify-center gap-2 h-full w-full">
+    <section className="mt-28 py-3 lg:mt-32 overflow-x-hidden" id="projects">
+      <h2 className="text-primary m-auto text-center border-b-2 w-fit text-xl lg:text-2xl border-primary">
+        {activeSkills.category} {/* Dynamically render the category */}
+      </h2>
+      <div className="h-full gap-3 flex items-center justify-start">
+        <div className="fixed z-10 lg:w-32">
+          <Aside icons={icons} active={active} setActive={setActive} />
+        </div>
+        <div className="flex flex-col items-center gap-3 justify-center h-full w-full">
+          <div className="flex flex-wrap gap-6 px-3 lg:gap-10 justify-center items-center grid-cols-2 lg:grid-cols-3 py-5 lg:w-[60%]">
+            {activeSkills.skills.map((skill, index) => {
+              return (
+                <div
+                  key={index}
+                  className="card col-span-1 rounded-xl relative w-[43%] lg:w-36 flex flex-col items-center justify-center h-20 lg:h-32 bg-light shadow-2xl"
+                >
                   {skill.icon && (
-                    <i className={` ${skill.icon} ${skill.color} text-6xl`}></i>
+                    <i
+                      className={`${skill.icon} text-2xl lg:text-6xl ${skill.color}`}
+                    ></i>
                   )}
-                  {skill.svg && <div className="pt-3">{skill.svg}</div>}
-
-                  <strong>{skill.name}</strong>
-                  <p className="text-center">{skill.description}</p>
+                  {skill.svg && skill.svg} {/* Render SVG icon if exists */}
+                  <h4 className="font-semibold">{skill.name}</h4>
+                  <div className="card-bg bg-primary top-0 left-0 absolute -z-10 h-full w-full rounded-xl rotate-12"></div>
                 </div>
-                <div className="bg-primary h-full w-full rotate-[10deg] rounded-2xl -z-10 absolute"></div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </div>
-    </>
+    </section>
   );
 };
 
